@@ -9,6 +9,12 @@ import {ProjectPage} from "@/components/projects/ProjectPage"
 
  export const runtime = 'edge'; 
 
+
+
+
+
+ 
+
 export default async function ProjectMainPage({params}: {params: Promise<{ slug: string }>}) {
   
   
