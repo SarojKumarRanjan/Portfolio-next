@@ -9,13 +9,13 @@ const contactInfo = [
   { 
     icon: Mail, 
     label: "Email", 
-    value: "your.email@example.com",
-    href: "mailto:your.email@example.com"
+    value: "sarojranjan555@gmail.com",
+    href: "mailto:sarojranjan555@gmail.com"
   },
   { 
     icon: MapPin, 
     label: "Location", 
-    value: "Mumbai, India" 
+    value: "Delhi NCR, India" 
   }
 ];
 
@@ -23,20 +23,20 @@ const socialLinks = [
   { 
     icon: Github, 
     label: "GitHub",
-    href: "https://github.com",
-    username: "@yourusername"
+    href: "https://github.com/SarojKumarRanjan",
+    username: "@SarojKumarRanjan"
   },
   { 
     icon: Linkedin, 
     label: "LinkedIn",
-    href: "https://linkedin.com",
-    username: "in/yourusername"
+    href: "https://www.linkedin.com/in/saroj-kumar-ranjan-3b82b2249/",
+    username: "in/Saroj Kumar Ranjan"
   },
   { 
     icon: Twitter, 
     label: "Twitter",
-    href: "https://twitter.com",
-    username: "@yourusername"
+    href: "https://x.com/SarojRanjan02",
+    username: "@SarojRanjan02"
   }
 ];
 

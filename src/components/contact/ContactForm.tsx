@@ -16,19 +16,37 @@ export default function ContactForm() {
     subject: "",
     message: ""
   });
+  const [status, setStatus] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Add form submission logic here
-    console.log("Form data:", formData);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    try {
+      const response = await fetch("https://formspree.io/f/mlddpzpr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("Failed to send the message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
@@ -40,7 +58,7 @@ export default function ContactForm() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="backdrop-blur-xl  border-grey/10">
+      <Card className="backdrop-blur-xl border-grey/10">
         <CardHeader>
           <h3 className="text-2xl font-semibold">Send a Message</h3>
           <p className="text-muted-foreground">I'll get back to you as soon as possible</p>
@@ -54,6 +72,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 className="bg-background/50"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -64,6 +83,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 className="bg-background/50"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -73,6 +93,7 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={handleChange}
                 className="bg-background/50"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -82,16 +103,18 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 className="min-h-[150px] bg-background/50"
+                required
               />
             </div>
-            <Button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="w-full gap-2"
-            >
+            <Button type="submit" disabled={isSubmitting} className="w-full gap-2">
               <SendHorizontal className="w-4 h-4" />
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
+            {status && (
+              <p className={`text-center mt-4 ${status.includes("success") ? "text-green-500" : "text-red-500"}`}>
+                {status}
+              </p>
+            )}
           </form>
         </CardContent>
       </Card>

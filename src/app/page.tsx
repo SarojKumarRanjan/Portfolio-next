@@ -3,10 +3,11 @@
 //h29jgvwavc
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Twitter, } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Twitter, } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { GitHubContributions } from "@/components/github/GitHubContributions";
+import img1 from "@/assests/3.jpeg";
 
 
 import ProjectGrid from "@/components/projects/ProjectGrid";
@@ -34,7 +35,7 @@ export default function Home() {
             >
               <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] mx-auto">
                 <Image
-                  src="https://img.freepik.com/free-photo/front-view-male-student-green-checkered-shirt-wearing-black-backpack-holding-clocks-blue-wall_140725-42392.jpg?t=st=1735076687~exp=1735080287~hmac=c165874a15e3fb4c1a5de519851d9af078c3d0337d8202d2a4d105f47af95f4a&w=996"
+                  src={img1}
                   alt="Developer"
                   width={600}
                   height={600}
@@ -76,7 +77,7 @@ export default function Home() {
                     View Projects <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
+                <Link href="https://github.com/SarojKumarRanjan" className="w-full sm:w-auto">
                   <Button
                     className="w-full sm:w-auto gap-2 border-primary/20 hover:bg-primary/10 
                     shadow-lg hover:shadow-xl
@@ -86,13 +87,14 @@ export default function Home() {
                     size="lg"
                     variant="outline"
                   >
-                    Contact Me
+<Github className="w-5 h-5" />
+Github
                   </Button>
                 </Link>
               </div>
 
               <div className="flex gap-4 justify-center lg:justify-start">
-                <a
+                <Link
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -106,11 +108,11 @@ export default function Home() {
                     variant="outline"
                     size="icon"
                   >
-                    <Github className="w-5 h-5" />
+                    <Linkedin className="w-5 h-5" />
                   </Button>
-                </a>
-                <a
-                  href="https://twitter.com"
+                </Link>
+                <Link
+                  href="https://x.com/SarojRanjan02"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -125,7 +127,7 @@ export default function Home() {
                   >
                     <Twitter className="w-5 h-5" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

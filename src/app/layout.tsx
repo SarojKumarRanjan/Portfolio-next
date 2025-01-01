@@ -7,7 +7,7 @@ import Navigation from "@/components/layout/Navigation";
 const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Full Stack Developer',
+  title: "Saroj's Portfolio | Full Stack Developer",
   description: 'Personal portfolio showcasing my projects and skills',
 };
 

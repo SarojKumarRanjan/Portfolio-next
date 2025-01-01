@@ -27,7 +27,7 @@ export default function Navigation() {
               href="/" 
               className="text-xl font-bold hover:text-primary transition-colors"
             >
-              Portfolio
+              Saroj Kr. Ranjan
             </Link>
             
             <nav className="flex items-center gap-6">

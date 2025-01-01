@@ -5,23 +5,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const timelineItems = [
+  
   {
-    year: "2024",
-    title: "Senior Frontend Developer",
-    description: "Leading development of enterprise web applications",
-    achievements: ["Team Leadership", "Architecture Design", "Performance Optimization"]
-  },
-  {
-    year: "2022",
+    year: "2025",
     title: "Full Stack Developer",
     description: "Building scalable web solutions",
-    achievements: ["Backend Integration", "API Development", "Database Design"]
+    achievements: ["Backend Integration", "API Development", "Database Design", "Deployment",
+    "React","Node.js","Express","Nextjs","MongoDB","Firebase","AppWrite","AWS","Docker","CI/CD","Microservices","Websockets","WebRTC"]
+    
   },
   {
-    year: "2020",
+    year: "2023",
     title: "Frontend Developer",
     description: "Started journey in web development",
-    achievements: ["UI Development", "React", "Responsive Design"]
+    achievements: ["UI Development", "Javascript","HTML","CSS","TailwindCSS", "Responsive Design"]
   }
 ];
 
