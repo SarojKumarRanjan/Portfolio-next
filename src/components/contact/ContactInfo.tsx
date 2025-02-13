@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link"
 
 const contactInfo = [
   { 
@@ -15,7 +16,8 @@ const contactInfo = [
   { 
     icon: MapPin, 
     label: "Location", 
-    value: "Delhi NCR, India" 
+    value: "Delhi NCR, India" ,
+    href:"http://example.com"
   }
 ];
 
@@ -58,22 +60,22 @@ export default function ContactInfo() {
               <motion.div
                 key={label}
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4"
+                className="font-medium flex items-center gap-4"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground">{label}</div>
+                  <div className="font-medium ">{label}</div>
                   {href ? (
-                    <a 
+                    <Link 
                       href={href}
-                      className="font-medium hover:text-primary transition-colors"
+                      className=" text-muted-foreground hover:text-primary transition-colors"
                     >
                       {value}
-                    </a>
+                    </Link>
                   ) : (
-                    <div className="font-medium">{value}</div>
+                    <div className="">{value}</div>
                   )}
                 </div>
               </motion.div>
@@ -90,7 +92,7 @@ export default function ContactInfo() {
                     onClick={() => window.open(href, "_blank")}
                   >
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-primary" />
+                      <Icon className="w-4 h-4 " />
                     </div>
                     <div className="text-left">
                       <div className="font-medium">{label}</div>
